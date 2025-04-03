@@ -1,8 +1,19 @@
-#include <iostream>
+#include <float.h>
+#include <stdio.h>
+#include <cub/cub.cuh>
 
-#include "header.hpp"
+#include <cuda_runtime.h>
 
-int main(int argc, char const* argv[]) {
-  std::cout << test::superfunc() << std::endl;
+#define reps 200
+
+int main() {
+#if _OPENMP
+  printf("omp used\n");
+#endif
+
+#if __clang__
+  printf("clang is used\n");
+#endif
+
   return 0;
 }
