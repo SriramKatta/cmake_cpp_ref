@@ -1,14 +1,16 @@
-#ifndef HEADER_HPP
+#ifndef HEADER_HPP 
 #define HEADER_HPP
 
-#pragma once
+#pragma once //Redundant but Safe
+
+#include <Eigen/Dense>
 
 namespace test
 {
 
-    int superfunc()
+    Eigen::MatrixXd superfunc()
     {
-        return 42;
+        return Eigen::MatrixXd::Ones(3,3);
     }
 }
 

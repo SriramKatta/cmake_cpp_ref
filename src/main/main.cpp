@@ -1,9 +1,8 @@
 #include <iostream>
-
-#include <header.hpp>
+#include "header.hpp"
 
 int main(int argc, char const *argv[])
 {
-    std::cout << "hello world " <<  test::superfunc() << std::endl;
+    std::cout << test::superfunc() << std::endl;
     return 0;
 }
