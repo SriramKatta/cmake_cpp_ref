@@ -10,5 +10,10 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
+
+#my build and executable directories
 build
 executable
+
+#IDE files
+.vscode
