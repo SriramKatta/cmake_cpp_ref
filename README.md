@@ -1,23 +1,25 @@
 # CMake with Nested Folder Structure
 
-This repository demonstrates a very basic C++ project setup using CMake with a nested folder structure. It is designed to help you understand how to organize your project and configure CMake to build it effectively.
+This repository demonstrates a basic C++ project setup using CMake with a nested folder structure. It is designed to help you understand how to organize your project and configure CMake to build it effectively with cmake.
 
 ## Project Structure
 
-Here is a simple flow chart:
-
 ```
 cmake_cpp_ref/
-├── header
-│   └── header.hpp
-├── src
-│   ├── main
-│   │   ├── CMakeLists.txt
-│   │   └── main.cpp
-│   └── CMakeLists.txt
+├── .gitignore
 ├── CMakeLists.txt
 ├── LICENSE
-└── README.md
+├── README.md
+├── cmake
+│   ├── CPM.cmake
+│   └── eigen.cmake
+├── header
+│   └── header.hpp
+└── src
+    ├── CMakeLists.txt
+    └── main
+        ├── CMakeLists.txt
+        └── main.cpp
 ```
 
 ## How It Works
@@ -26,14 +28,15 @@ cmake_cpp_ref/
     - Defines the project name and version.
     - Specifies the minimum required CMake version.
     - Includes the `src` folder for further configuration.
+    - Includes eigen and cpm package manger
 
 2. **`src/CMakeLists.txt`**:
-    - Adds the executable target (e.g., `main.cpp`).
-    - Links the library from the `lib` folder.
+    - Adds subdirectory `main`
 
-3. **`src/lib/CMakeLists.txt`**:
-    - Defines the library target (e.g., `mylib`).
-    - Specifies the source files for the library.
+3. **`src/main/CMakeLists.txt`**:
+    - Adds the executable target (e.g., `main.cpp`).
+    - Links the library from the `Eigen` folder.
+
 
 ## Build Instructions
 
@@ -44,35 +47,28 @@ cmake_cpp_ref/
     cd cmake_cpp_ref
     ```
 
-2. Create a build directory and navigate to it:
+2. Run CMake to configure the project:
 
     ```bash
-    mkdir build
-    cd build
+    cmake -S . -B build
     ```
 
-3. Run CMake to configure the project:
+3. Build the project:
 
     ```bash
-    cmake ..
+    cmake --build build -j
     ```
 
-4. Build the project:
+4. Run the executable:
 
     ```bash
-    cmake --build .
-    ```
-
-5. Run the executable:
-
-    ```bash
-    ./<executable-name>
+    ./executable/<exe_name>
     ```
 
 ## Key Points
 
 - The project demonstrates how to use CMake with a nested folder structure.
 - Each folder has its own `CMakeLists.txt` for modular configuration.
-- The `lib` folder contains a simple library that is linked to the main executable.
+- The `header` folder contains a simple header file that is linked to the main executable.
 
 Feel free to explore the code and modify it to suit your needs!
