@@ -1,7 +1,8 @@
-set_source_files_properties(main.cpp PROPERTIES LANGUAGE CUDA)
+# can be used to compile cpp files using nvcc
+#set_source_files_properties(main.cpp PROPERTIES LANGUAGE CUDA)
 
-# Define an executable target from main.cpp
-add_executable(testexe main.cpp)
+# Define an executable target from main.cu
+add_executable(testexe main.cu)
 
 # Link Eigen library to the testexe executable
 target_link_libraries(testexe PRIVATE CCCL::CUB CCCL::Thrust )
