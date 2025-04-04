@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <cub/cub.cuh>
 
-#include "header.cuh"
+#include "test_header.cuh"
 
 using VT = double;
 
@@ -22,7 +22,7 @@ void dummy_omp_pin() {
 
 int main() {
   dummy_omp_pin();
-  size_t N = 1 << 25;
+  size_t N = 1 << 28;
 
   VT *h_arr;
   VT *h_arr_res;
@@ -32,13 +32,10 @@ int main() {
   cudaMallocHost(&h_arr_res, sizeinbytes);
   cudaMalloc(&d_arr, sizeinbytes);
   test::setvaluecpu(h_arr, N, 0.0);
-
-  cudaMemcpy(d_arr, h_arr, sizeinbytes, cudaMemcpyHostToDevice);
   test::streamgpu<<<40, 256>>>(d_arr, N);
   test::streamcpu(h_arr, N);
   cudaMemcpy(h_arr_res, d_arr, sizeinbytes, cudaMemcpyDeviceToHost);
-  //test::printarray(h_arr, N);
-  //test::printarray(h_arr_res, N);
+
   test::printerror(h_arr, h_arr_res, N);
   cudaFreeHost(h_arr);
   cudaFreeHost(h_arr_res);
