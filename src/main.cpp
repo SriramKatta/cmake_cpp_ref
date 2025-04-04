@@ -23,7 +23,6 @@ void dummy_omp_pin() {
 int main() {
   dummy_omp_pin();
   size_t N = 1 << 28;
-
   VT *h_arr;
   VT *h_arr_res;
   VT *d_arr;

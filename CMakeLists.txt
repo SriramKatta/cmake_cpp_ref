@@ -13,9 +13,6 @@ set(CMAKE_CUDA_ARCHITECTURES 80)
 include(cmake/CPM.cmake)
 include(cmake/cccl.cmake)
 
-find_package(CUDAToolkit)
-find_package(OpenMP)
-
 include_directories(header)
 
 add_subdirectory(src)
