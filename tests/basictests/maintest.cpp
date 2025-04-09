@@ -17,3 +17,7 @@ TEST(basictest, test3)
 {
     ASSERT_EQ(test::return42('c'), 42) << "ERROR IN THE FUNCTION";
 }
+
+TEST(sanju, test1){
+    ASSERT_NE(test::return42(), 41) << "Error in function";
+}
