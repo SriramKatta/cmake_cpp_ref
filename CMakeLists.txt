@@ -1,5 +1,5 @@
 # Set the minimum required CMake version and enforce it strictly
-cmake_minimum_required(VERSION 3.28 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.23 FATAL_ERROR)
 
 # Define the project name
 project(testproj)
