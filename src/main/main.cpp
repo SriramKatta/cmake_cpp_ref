@@ -26,7 +26,7 @@ int main(int ac, char *av[]) {
     int opt;
     int portnum;
     po::options_description desc("Allowed options");
-    desc.add_options()("help", "produce help message")(
+    desc.add_options()("help,h", "produce help message")(
       "optimization", po::value<int>(&opt)->default_value(10),
       "optimization level")("verbose,v", po::value<int>()->implicit_value(1),
                             "enable verbosity (optionally specify level)")(
