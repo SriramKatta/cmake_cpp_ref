@@ -14,7 +14,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(cmake/CPM.cmake)
 
 # Load Eigen library settings
-include(cmake/eigen.cmake)
+include(cmake/boost.cmake)
 
 # Include the "header" directory for header files
 include_directories(header)
