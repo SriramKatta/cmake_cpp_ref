@@ -1,8 +1,6 @@
-#include <iostream>
-
-#include "header.hpp"
-
-int main(int argc, char const* argv[]) {
-  std::cout << test::superfunc() << std::endl;
-  return 0;
+#include "matplotlibcpp.h"
+namespace plt = matplotlibcpp;
+int main() {
+    plt::plot({1,3,2,4});
+    plt::show();
 }

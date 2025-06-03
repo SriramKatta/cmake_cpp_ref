@@ -14,10 +14,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include(cmake/CPM.cmake)
 
 # Load Eigen library settings
-include(cmake/eigen.cmake)
+include(cmake/matplotcpp.cmake)
 
 # Include the "header" directory for header files
-include_directories(header)
+#include_directories(header)
 
 # Add the "src" directory as a subdirectory for compilation
 add_subdirectory(src)
